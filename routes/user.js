@@ -23,6 +23,10 @@ exports.updateUser = function(params, successHandler, errorHandler){
     myrequest.sendHttpRequests(params, '/v1/users/me', 'PUT', successHandler, errorHandler);
 };
 
+exports.changeOrg = function(params, successHandler, errorHandler){
+    myrequest.sendHttpRequests('', '/v1/organizations/'+params.orgid+'/users', 'PUT', successHandler, errorHandler);
+};
+
 exports.logout = function(successHandler, errorHandler){
     myrequest.sendHttpRequests('', '/v1/logout', 'GET', successHandler, errorHandler);
 };

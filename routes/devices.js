@@ -1,8 +1,8 @@
 var myrequest = require('./httprequest/httprequest');
 
 /*
-* methods to access all device related services from the BlueApp platform
-*/
+ *  methods to access all device related services from the BlueApp platform
+ */
 
 									// ################## DEVICES ################## //
 
@@ -31,7 +31,7 @@ exports.addDevice = function(params, successHandler, errorHandler){
 	}else{
 		tags = '';
 	}
-	myrequest.sendHttpRequests({tags:tags}, '/v1/tags', 'POST', tagsuccessHandler, tagerrorHandler);
+	myrequest.sendHttpRequests({tags:tags}, '/v1/organizations/'+params.orgid+'/tags', 'POST', tagsuccessHandler, tagerrorHandler);
 };
 
 exports.deleteDevice = function(params, successHandler, errorHandler){
@@ -77,7 +77,7 @@ exports.updateDevice = function(params, successHandler, errorHandler){
 	}else{
 		tags = '';
 	}
-	myrequest.sendHttpRequests({tags:tags}, '/v1/tags', 'POST', tagsuccessHandler, tagerrorHandler);	
+	myrequest.sendHttpRequests({tags:tags}, '/v1/organizations/'+params.orgid+'/tags', 'POST', tagsuccessHandler, tagerrorHandler);	
 };
 
 exports.getUUIDsFromDevice = function(params, successHandler, errorHandler){
@@ -88,27 +88,37 @@ exports.findDeviceByUUID = function(params, successHandler, errorHandler){
     myrequest.sendHttpRequests('', '/v1/organizations/'+params.orgid+'/devices/'+params.uuid+'/macaddress/', 'GET', successHandler, errorHandler);
 };
 
+exports.getDeviceAuthToken = function(params, successHandler, errorHandler){
+    myrequest.sendHttpRequests(params, '/v1/organizations/'+params.orgid+'/devices/'+params.deviceid+'/getauthtoken', 'POST', successHandler, errorHandler);
+};
+
 									// ################## TAGS ################## //
+
+exports.createTags = function(params, successHandler, errorHandler){
+	var tags = '';
+	if(params.tags && params.tags != '' && Object.prototype.toString.call( params.tags ) === '[object Array]'){
+		for(var i = 1 ; i < params.tags.length ; i++){
+	        params.tags[i] = params.tags[i].charAt(0).toUpperCase()+ params.tags[i].substr(1);
+	    }
+		tags = params.tags;
+	}else{
+		tags = '';
+	}
+	myrequest.sendHttpRequests({tags:tags}, '/v1/organizations/'+params.orgid+'/tags', 'POST', successHandler, errorHandler);
+};
 
 exports.getAllTags = function(params, successHandler, errorHandler){
     myrequest.sendHttpRequests('', '/v1/organizations/'+params.orgid+'/tags', 'GET', successHandler, errorHandler);
 };
 
-exports.addTagForDevice = function(params, successHandler, errorHandler){
-    myrequest.sendHttpRequests(params, '/v1/createtag/'+params.device_id, 'PUT', successHandler, errorHandler);
+exports.addTagsForDevice = function(params, successHandler, errorHandler){
+    myrequest.sendHttpRequests(params, '/v1/organizations/'+params.orgid+'/devices/'+params.deviceid+'/tags', 'POST', successHandler, errorHandler);
 };
 
-									// ################## NOTIFICATIONS ################## //
-
-exports.getNotifications = function(params, successHandler, errorHandler){
-    myrequest.sendHttpRequests('', '/v1/notifications', 'GET', successHandler, errorHandler);
+exports.updateTagsForDevice = function(params, successHandler, errorHandler){
+    myrequest.sendHttpRequests(params, '/v1/organizations/'+params.orgid+'/devices/'+params.deviceid+'/tags', 'PUT', successHandler, errorHandler);
 };
 
-exports.createNotification = function(params, successHandler, errorHandler){
-    myrequest.sendHttpRequests(params, '/v1/notifications', 'POST', successHandler, errorHandler);
+exports.deleteTags = function(params, successHandler, errorHandler){
+    myrequest.sendHttpRequests(params, '/v1/organizations/'+params.orgid+'/tags', 'DELETE', successHandler, errorHandler);
 };
-
-exports.deleteNotification = function(params, successHandler, errorHandler){
-    myrequest.sendHttpRequests('', '/v1/notifications/'+params.token+'/'+params.noti_stat, 'DELETE', successHandler, errorHandler);
-};
-
