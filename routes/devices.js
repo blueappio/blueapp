@@ -94,7 +94,7 @@ exports.getDeviceAuthToken = function(params, successHandler, errorHandler){
 
 									// ################## TAGS ################## //
 
-exports.createTags = function(params, successHandler, errorHandler){
+var createTags = function(params, successHandler, errorHandler){
 	var tags = '';
 	if(params.tags && params.tags != '' && Object.prototype.toString.call( params.tags ) === '[object Array]'){
 		for(var i = 1 ; i < params.tags.length ; i++){
