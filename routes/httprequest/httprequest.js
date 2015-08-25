@@ -9,8 +9,6 @@ var authorization;
 exports.sendHttpRequests = function(payload, path, method, successHandler, errorHandler){
 
     var options = {
-      // host: 'localhost',
-      // port: '3030',      
       host: 'dev.blueapp.io',
       path: path,
       method: method,
