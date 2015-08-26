@@ -1,7 +1,7 @@
 var user = require('./routes/user');
-var device = require('./routes/devices');
+var devices = require('./routes/devices');
 var applications = require('./routes/applications');
-var org = require('./routes/organizations');
+var organizations = require('./routes/organizations');
 var widgets = require('./routes/widgets');
 
 var myrequest = require('./routes/httprequest/httprequest');
@@ -36,33 +36,33 @@ module.exports = {
 	changeOrg: user.changeOrg,
 	logout: user.logout,
 
-	createOrganization: org.createOrganization,
-	getOrganization: org.getOrganization,
-	updateOrganization: org.updateOrganization,
-	deleteOrganization: org.deleteOrganization,
-	getOrganizations: org.getOrganizations,
-	getUsersInOrg: org.getUsersInOrg,
-	getUserRoles: org.getUserRoles,
-	removeUserFromOrg: org.removeUserFromOrg,
-	updateUserRoles: org.updateUserRoles,
+	createOrganization: organizations.createOrganization,
+	getOrganization: organizations.getOrganization,
+	updateOrganization: organizations.updateOrganization,
+	deleteOrganization: organizations.deleteOrganization,
+	getOrganizations: organizations.getOrganizations,
+	getUsersInOrg: organizations.getUsersInOrg,
+	getUserRoles: organizations.getUserRoles,
+	removeUserFromOrg: organizations.removeUserFromOrg,
+	updateUserRoles: organizations.updateUserRoles,
 
-	getDeviceTypes: device.getDeviceTypes,
-	addDevice: device.addDevice,
-	deleteDevice: device.deleteDevice,
-	getDevices: device.getDevices,
-	getDevice: device.getDevice,
-	getGateways: device.getGateways,
-	getPeripherals: device.getPeripherals,
-	updateDevice: device.updateDevice,
-	getUUIDsFromDevice: device.getUUIDsFromDevice,
-	findDeviceByUUID: device.findDeviceByUUID,
-	getDeviceAuthToken: device.getDeviceAuthToken,
+	getDeviceTypes: devices.getDeviceTypes,
+	addDevice: devices.addDevice,
+	deleteDevice: devices.deleteDevice,
+	getDevices: devices.getDevices,
+	getDevice: devices.getDevice,
+	getGateways: devices.getGateways,
+	getPeripherals: devices.getPeripherals,
+	updateDevice: devices.updateDevice,
+	getUUIDsFromDevice: devices.getUUIDsFromDevice,
+	findDeviceByUUID: devices.findDeviceByUUID,
+	getDeviceAuthToken: devices.getDeviceAuthToken,
 
-	createTags: device.createTags,
-	addTagsForDevice: device.addTagsForDevice,
-	updateTagsForDevice: device.updateTagsForDevice,
-	deleteTags: device.deleteTags,
-	getAllTags: device.getAllTags,
+	createTags: devices.createTags,
+	addTagsForDevice: devices.addTagsForDevice,
+	updateTagsForDevice: devices.updateTagsForDevice,
+	deleteTags: devices.deleteTags,
+	getAllTags: devices.getAllTags,
 
 	getWidgets: widgets.getWidgets,
 	createWidget: widgets.createWidget,
