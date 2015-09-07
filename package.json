@@ -1,5 +1,5 @@
 {
-  "name": "BlueApp",
+  "name": "blueapp",
   "version": "0.0.1",
   "description": "A small library providing utility methods to communicating with the BlueApp.io",
   "main": "blueapp.js",
