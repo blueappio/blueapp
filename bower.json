@@ -1,0 +1,36 @@
+{
+  "name": "blueapp",
+  "version": "0.0.1",
+  "description": "A small library providing utility methods to communicating with the BlueApp.io",
+  "main": "blueapp.js",
+  "authors": [
+    "Kushal Kumar <kushal@vensi.com> (http://www.vensi.com/)"
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/blueappio/blueapp/blob/master/LICENSE-MIT"
+    }
+  ],
+  "keywords": [
+    "blueapp",
+    "BlueApp.io",
+    "Connect",
+    "GATT-IP",
+    "GATTIP",
+    "Vensi"
+  ],
+  "homepage": "https://github.com/blueappio/blueapp",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
