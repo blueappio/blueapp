@@ -6,6 +6,9 @@
   "authors": [
     "Kushal Kumar <kushal@vensi.com> (http://www.vensi.com/)"
   ],
+  "dependencies": {
+    "swagger-js": "latest"
+  },  
   "licenses": [
     {
       "type": "MIT",
