@@ -1,6 +1,6 @@
 {
   "name": "blueapp",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "A small library providing utility methods to communicating with the BlueApp.io",
   "main": "blueapp.js",
   "scripts": {
