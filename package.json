@@ -1,13 +1,10 @@
 {
   "name": "blueapp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A small library providing utility methods to communicating with the BlueApp.io",
   "main": "blueapp.js",
   "scripts": {
     "start": "node blueapp.js"
-  },
-  "dependencies": {
-    "swagger-client": "latest",
   },
   "repository": {
     "type": "git",
@@ -29,7 +26,6 @@
     }
   ],
   "ignore": [
-    "bowser.json",
-    "test/"
+    "bowser.json"
   ],  
 }
