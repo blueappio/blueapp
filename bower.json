@@ -7,7 +7,8 @@
     "Kushal Kumar <kushal@vensi.com> (http://www.vensi.com/)"
   ],
   "dependencies": {
-    "swagger-js": "latest"
+    "swagger-js": "latest",
+    "gatt-ip-js":"latest"
   },  
   "licenses": [
     {
