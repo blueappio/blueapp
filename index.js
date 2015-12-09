@@ -1,4 +1,4 @@
-(typeof process === 'object' && process + '' === '[object process]')) {
+if(typeof process === 'object' && process + '' === '[object process]') {
 	var blueappapi = require('swagger-client');
 	var blueappgattip = require('gatt-ip-js');
 
