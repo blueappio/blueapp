@@ -1,8 +1,8 @@
 {
   "name": "blueapp",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A small library providing utility methods to communicating with the BlueApp.io",
-  "main": "blueapp.js",
+  "main": "index.js",
   "scripts": {
     "start": "node blueapp.js"
   },
